@@ -1,0 +1,40 @@
+.transaction-add {
+  padding: 15px 15px;
+  // padding-bottom: 15px;
+
+  background-color: #f1f1f1;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  & input {
+    margin: 5px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: flex-end;
+
+
+    padding: 5px 0;
+  }
+
+  &__delete-btn {
+    margin-right: auto;
+    color: red;
+    background-color: transparent;
+    border: none;
+  }
+
+  &__type {
+    display: flex;
+    align-items: center;
+
+    & input {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin: 0;
+      margin-right: 5px;
+    }
+  }
+}

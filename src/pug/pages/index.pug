@@ -1,0 +1,216 @@
+extends ../layout/main
+
+block variables
+  - var title = 'Expense tracker';
+  - var description = '';
+
+block content
+  section.search
+    input(type='text' name='search' placeholder='Search by category')
+
+  section.transactions
+    div.transactions__title
+      h2 Transactions
+      //- p Add
+      p Add
+    .transaction-add.hidden
+        input(type='text' name='sum' placeholder='Enter an amount')
+        input(type='text' name='category' placeholder='Choose a category')
+        input(type='text' name='account' placeholder='Choose an account')
+        input(type='date' name='date' value='25.10.2021')
+        .transaction-add__wrapper
+          div.transaction-add__type
+            input(type='checkbox' id="type" name='type')
+            label(for="type") Income
+        button.button Create
+
+  section.balance
+    .balance__container.balance__balance
+      div
+        p Your balance
+        p.balance__amount 3500 &#128
+    //- .balance__wrapper.balance__container
+    //-   .balance__income
+    //-     p Income
+    //-     p.balance__amount 6500 &#128
+    //-   .balance__expense
+    //-     p Expense
+    //-     p.balance__amount 3000 &#128
+
+  section.transactions-list
+    h2 Transactions List
+    ul.transactions-list__list
+      .transactions-list__day
+        p Tuesday, 26
+        //- p -70.00 &#128
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Cafe
+          p.transactions-list__item--expense -15.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Car
+          p.transactions-list__item--expense -35.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Supermarket
+          p.transactions-list__item--expense -20.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+
+    ul.transactions-list__list
+      .transactions-list__day
+        p Monday, 25
+        //- p -15.00 &#128
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Cafe
+          p.transactions-list__item--expense -15.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Supermarket
+          p.transactions-list__item--expense -20.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+
+    ul.transactions-list__list
+      .transactions-list__day
+        p Sunday, 24
+        //- p -15.00 &#128
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Cafe
+          p.transactions-list__item--expense -15.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+
+    ul.transactions-list__list
+      .transactions-list__day
+        p Tuesday, 26
+        //- p -70.00 &#128
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Cafe
+          p.transactions-list__item--expense -15.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Car
+          p.transactions-list__item--expense -35.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Supermarket
+          p.transactions-list__item--expense -20.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+
+    ul.transactions-list__list
+      .transactions-list__day
+        p Sunday, 24
+        //- p -15.00 &#128
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Cafe
+          p.transactions-list__item--expense -15.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+
+    ul.transactions-list__list
+      .transactions-list__day
+        p Sunday, 24
+        //- p -15.00 &#128
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Cafe
+          p.transactions-list__item--expense -15.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+
+    ul.transactions-list__list
+      .transactions-list__day
+        p Tuesday, 26
+        //- p -70.00 &#128
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Cafe
+          p.transactions-list__item--expense -15.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Car
+          p.transactions-list__item--expense -35.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Supermarket
+          p.transactions-list__item--income -20.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+
+    ul.transactions-list__list
+      .transactions-list__day
+        p Sunday, 24
+        //- p -15.00 &#128
+      li.transactions-list__item
+        .transactions-list__item-wrapper
+          p Cafe
+          p.transactions-list__item--expense -15.00 &#128
+        .transactions-list__item-wrapper
+          p.transactions-list__item--account Tinkoff
+          p.transactions-list__item--edit.hidden edit
+          p.transactions-list__item--close.hidden close
+
+  template#edit
+    .transaction-edit
+        input(type='text' id="sum" name='sum' value='20.00')
+        input(type='text' id="category" name='category' value='Supermarket')
+        input(type='text' id="account" name='account' value='Tinkoff')
+        input(type='date' id="date" name='date' value='2021.10.25')
+        .transaction-edit__wrapper
+          button.transaction-edit__delete-btn Delete
+          //- button Income: false
+          div.transaction-edit__type
+            input(type='checkbox' id="type" name='type')
+            label(for="type") Income
+        button.button Save changes
+

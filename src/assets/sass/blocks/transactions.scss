@@ -1,0 +1,22 @@
+.transactions {
+  padding-bottom: 20px;
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+
+    & p {
+      padding: 0 10px;
+    }
+  }
+
+  &__title h2 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  &__on-click {
+    font-weight: 700;
+    background-color: #f1f1f1;
+  }
+}
