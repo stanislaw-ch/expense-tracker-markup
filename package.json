@@ -1,7 +1,7 @@
 {
-  "name": "money-tracker-markup",
+  "name": "expense-tracker-markup",
   "version": "1.0.0",
-  "description": "money tracker",
+  "description": "expense tracker",
   "private": true,
   "scripts": {
     "stylelint": "stylelint \"src/assets/sass/**/*.scss\" --syntax scss",
