@@ -12,17 +12,24 @@ block content
     div.transactions__title
       h2 Transactions
       //- p Add
-      p Add
-    .transaction-add.hidden
-        input(type='text' name='sum' placeholder='Enter an amount')
-        input(type='text' name='category' placeholder='Choose a category')
-        input(type='text' name='account' placeholder='Choose an account')
-        input(type='date' name='date' value='25.10.2021')
-        .transaction-add__wrapper
-          div.transaction-add__type
-            input(type='checkbox' id="type" name='type')
-            label(for="type") Income
-        button.button Create
+      p.transaction-add__btn Add
+    .transactions__wrapper
+      .transaction-add.transaction-add__hidden.transaction-add__fade-out
+          input(type='text' name='sum' placeholder='Enter an amount')
+          select
+            option(value='Car') Car
+            option(value='Health') Health
+            option(value='Supermarket') Supermarket
+            option(value='Hobbies') Hobbies
+          select
+            option(value='N26') N26
+            option(value='Cash') Cash
+          input(type='date' name='date' value='25.10.2021')
+          .transaction-add__wrapper
+            div.transaction-add__type
+              input(type='checkbox' id="type" name='type')
+              label(for="type") Income
+          button.button Create
 
   section.balance
     .balance__container.balance__balance
@@ -51,6 +58,18 @@ block content
           p.transactions-list__item--account Tinkoff
           p.transactions-list__item--edit.hidden edit
           p.transactions-list__item--close.hidden close
+      .transaction-edit.hidden
+        input(type='text' id="sum" name='sum' value='20.00')
+        input(type='text' id="category" name='category' value='Supermarket')
+        input(type='text' id="account" name='account' value='Tinkoff')
+        input(type='date' id="date" name='date' value='2021.10.25')
+        .transaction-edit__wrapper
+          button.transaction-edit__delete-btn Delete
+          //- button Income: false
+          div.transaction-edit__type
+            input(type='checkbox' id="type" name='type')
+            label(for="type") Income
+        button.button Save changes
       li.transactions-list__item
         .transactions-list__item-wrapper
           p Car
@@ -59,6 +78,18 @@ block content
           p.transactions-list__item--account Tinkoff
           p.transactions-list__item--edit.hidden edit
           p.transactions-list__item--close.hidden close
+      .transaction-edit.hidden
+        input(type='text' id="sum" name='sum' value='20.00')
+        input(type='text' id="category" name='category' value='Supermarket')
+        input(type='text' id="account" name='account' value='Tinkoff')
+        input(type='date' id="date" name='date' value='2021.10.25')
+        .transaction-edit__wrapper
+          button.transaction-edit__delete-btn Delete
+          //- button Income: false
+          div.transaction-edit__type
+            input(type='checkbox' id="type" name='type')
+            label(for="type") Income
+        button.button Save changes
       li.transactions-list__item
         .transactions-list__item-wrapper
           p Supermarket

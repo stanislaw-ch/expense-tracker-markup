@@ -4,9 +4,9 @@ const HTMLWebpackPlugin = require(`html-webpack-plugin`);
 const {CleanWebpackPlugin} = require(`clean-webpack-plugin`);
 const CopyWebpackPlugin = require(`copy-webpack-plugin`);
 const MiniCssExtractPlugin = require(`mini-css-extract-plugin`);
-const OptimizeCssAssetsWebpackPlugin = require(`optimize-css-assets-webpack-plugin`);
+const OptimizeCssAssetsWebpackPlugin = require(`css-minimizer-webpack-plugin`);
 const TerserWebpackPlugin = require(`terser-webpack-plugin`);
-const SVGSpriteMapPlugin = require(`svg-spritemap-webpack-plugin`);
+// const SVGSpriteMapPlugin = require(`svg-spritemap-webpack-plugin`);
 const webpack = require(`webpack`);
 
 const isDev = process.env.NODE_ENV === `development`;
@@ -67,9 +67,9 @@ const jsLoaders = () => {
     options: babelOptions()
   }];
 
-  if (isDev) {
-    loaders.push(`eslint-loader`);
-  }
+  // if (isDev) {
+  //   loaders.push(`eslint-loader`);
+  // }
 
   return loaders;
 };
@@ -91,7 +91,7 @@ module.exports = {
   },
   optimization: optimization(),
   devServer: {
-    contentBase: `public`,
+    // contentBase: `public`,
     port: 8080,
     open: true,
     hot: true,

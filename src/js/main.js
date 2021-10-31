@@ -1,6 +1,7 @@
 const transactionItems = document.querySelectorAll(`.transactions-list__item`);
 const transactionAdd = document.querySelector(`.transaction-add`);
-const transactionAddButton = document.querySelector(`.transactions__title p`);
+const transactionAddButton = document.querySelector(`.transaction-add__btn`);
+const transactionSubmitButton = document.querySelector(`.button`);
 
 const similarCardTemplate = document.querySelector(`#edit`).content.querySelector(`.transaction-edit`);
 
@@ -63,6 +64,26 @@ transactionItems.forEach((item) => {
 });
 
 transactionAddButton.onclick = function () {
-  // transactionAddButton.classList.toggle(`transactions__on-click`);
-  transactionAdd.classList.toggle(`hidden`);
+  if (transactionAdd.classList.contains(`transaction-add__fade-in`)) {
+    transactionAdd.classList.toggle(`transaction-add__fade-in`);
+    transactionAdd.classList.toggle(`transaction-add__fade-out`);
+    transactionAddButton.classList.toggle(`transaction-add__btn--click`);
+    setTimeout(() => transactionAdd.classList.toggle(`transaction-add__hidden`), 900);
+  } else {
+    if (transactionAdd.classList.contains(`transaction-add__fade-out`)) {
+    transactionAdd.classList.toggle(`transaction-add__hidden`);
+    transactionAdd.classList.toggle(`transaction-add__fade-in`);
+    transactionAdd.classList.toggle(`transaction-add__fade-out`);
+    transactionAddButton.classList.toggle(`transaction-add__btn--click`);
+  }
+  }
+};
+
+transactionSubmitButton.onclick = function () {
+  setTimeout(function () {
+    transactionAdd.classList.toggle(`transaction-add__fade-in`);
+    transactionAdd.classList.toggle(`transaction-add__fade-out`);
+    transactionAddButton.classList.toggle(`transaction-add__btn--click`);
+    setTimeout(() => transactionAdd.classList.toggle(`transaction-add__hidden`), 900);
+  }, 500)
 };
