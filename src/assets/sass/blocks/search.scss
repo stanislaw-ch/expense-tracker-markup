@@ -1,5 +1,51 @@
 .search {
+  position: relative;
+  margin: 0 10px;
   margin-bottom: 20px;
   border: 1px solid #a7a7a7;
   border-radius: 5px;
+
+  &__close-btn {
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    box-sizing: border-box;
+
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    transition: all ease 0.3s;
+
+    &:before, &:after {
+      position: absolute;
+      width: 20px;
+      height: 1px;
+      left: 17px;
+      top: 50%;
+      margin-left: - (4em / 2) / 2;
+
+      content: '';
+      background: #8a9199;
+      transition: all ease 1s;
+    }
+
+    &:before {
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+
+    &:after {
+      -webkit-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    &:hover, &:focus {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg);
+
+      &:before, &:after {
+        background: #000000;
+      }
+    }
+  }
 }

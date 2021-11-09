@@ -7,14 +7,15 @@ block variables
 block content
   section.search
     input(type='text' name='search' placeholder='Search by category')
+    a.search__close-btn
 
-  section.transactions
-    div.transactions__title
+  section.transaction
+    div.transaction__title
       h2 Transactions
       //- p Add
-      p.transaction-add__btn Add
-    .transactions__wrapper
-      .transaction-add.transaction-add__hidden.transaction-add__fade-out
+      p.transaction__dialog-btn Add
+    .transaction__dialog-wrapper
+      .transaction__dialog.transaction__dialog--hidden.transaction__dialog--fade-out
           input(type='text' name='sum' placeholder='Enter an amount')
           select
             option(value='Car') Car
@@ -25,14 +26,14 @@ block content
             option(value='N26') N26
             option(value='Cash') Cash
           input(type='date' name='date' value='25.10.2021')
-          .transaction-add__wrapper
-            div.transaction-add__type
+          .transaction__dialog-type-wrapper
+            div.transaction__dialog-type
               input(type='checkbox' id="type" name='type')
               label(for="type") Income
           button.button Create
 
   section.balance
-    .balance__container.balance__balance
+    .balance__container
       div
         p Your balance
         p.balance__amount 3500 &#128
@@ -44,20 +45,24 @@ block content
     //-     p Expense
     //-     p.balance__amount 3000 &#128
 
-  section.transactions-list
-    h2 Transactions List
-    ul.transactions-list__list
-      .transactions-list__day
-        p Tuesday, 26
-        //- p -70.00 &#128
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+  section.transactions
+    //- h2 Transactions List
+    ul.transactions__list
+      .transactions__header
+        .transactions__date-content
+          p 26
+          .transactions__date-wrapper
+            p Tuesday
+            p October 2021
+        p -70.00 &#128
+      li.transactions__item
+        .transactions__item-wrapper
           p Cafe
-          p.transactions-list__item--expense -15.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -15.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
       .transaction-edit.hidden
         input(type='text' id="sum" name='sum' value='20.00')
         input(type='text' id="category" name='category' value='Supermarket')
@@ -70,14 +75,14 @@ block content
             input(type='checkbox' id="type" name='type')
             label(for="type") Income
         button.button Save changes
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+      li.transactions__item
+        .transactions__item-wrapper
           p Car
-          p.transactions-list__item--expense -35.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -35.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
       .transaction-edit.hidden
         input(type='text' id="sum" name='sum' value='20.00')
         input(type='text' id="category" name='category' value='Supermarket')
@@ -90,146 +95,174 @@ block content
             input(type='checkbox' id="type" name='type')
             label(for="type") Income
         button.button Save changes
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+      li.transactions__item
+        .transactions__item-wrapper
           p Supermarket
-          p.transactions-list__item--expense -20.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -20.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
 
-    ul.transactions-list__list
-      .transactions-list__day
-        p Monday, 25
-        //- p -15.00 &#128
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+    ul.transactions__list
+      .transactions__header
+        .transactions__date-content
+          p 26
+          .transactions__date-wrapper
+            p Tuesday
+            p October 2021
+        p -70.00 &#128
+      li.transactions__item
+        .transactions__item-wrapper
           p Cafe
-          p.transactions-list__item--expense -15.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -15.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
 
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+      li.transactions__item
+        .transactions__item-wrapper
           p Supermarket
-          p.transactions-list__item--expense -20.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -20.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
 
-    ul.transactions-list__list
-      .transactions-list__day
-        p Sunday, 24
-        //- p -15.00 &#128
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+    ul.transactions__list
+      .transactions__header
+        .transactions__date-content
+          p 26
+          .transactions__date-wrapper
+            p Tuesday
+            p October 2021
+        p -70.00 &#128
+      li.transactions__item
+        .transactions__item-wrapper
           p Cafe
-          p.transactions-list__item--expense -15.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -15.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
 
-    ul.transactions-list__list
-      .transactions-list__day
-        p Tuesday, 26
-        //- p -70.00 &#128
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+    ul.transactions__list
+      .transactions__header
+        .transactions__date-content
+          p 26
+          .transactions__date-wrapper
+            p Tuesday
+            p October 2021
+        p -70.00 &#128
+      li.transactions__item
+        .transactions__item-wrapper
           p Cafe
-          p.transactions-list__item--expense -15.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+          p.transactions__item--expense -15.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
+      li.transactions__item
+        .transactions__item-wrapper
           p Car
-          p.transactions-list__item--expense -35.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+          p.transactions__item--expense -35.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
+      li.transactions__item
+        .transactions__item-wrapper
           p Supermarket
-          p.transactions-list__item--expense -20.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -20.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
 
-    ul.transactions-list__list
-      .transactions-list__day
-        p Sunday, 24
-        //- p -15.00 &#128
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+    ul.transactions__list
+      .transactions__header
+        .transactions__date-content
+          p 26
+          .transactions__date-wrapper
+            p Tuesday
+            p October 2021
+        p -70.00 &#128
+      li.transactions__item
+        .transactions__item-wrapper
           p Cafe
-          p.transactions-list__item--expense -15.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -15.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
 
-    ul.transactions-list__list
-      .transactions-list__day
-        p Sunday, 24
-        //- p -15.00 &#128
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+    ul.transactions__list
+      .transactions__header
+        .transactions__date-content
+          p 26
+          .transactions__date-wrapper
+            p Tuesday
+            p October 2021
+        p -70.00 &#128
+      li.transactions__item
+        .transactions__item-wrapper
           p Cafe
-          p.transactions-list__item--expense -15.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -15.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
 
-    ul.transactions-list__list
-      .transactions-list__day
-        p Tuesday, 26
-        //- p -70.00 &#128
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+    ul.transactions__list
+      .transactions__header
+        .transactions__date-content
+          p 26
+          .transactions__date-wrapper
+            p Tuesday
+            p October 2021
+        p -70.00 &#128
+      li.transactions__item
+        .transactions__item-wrapper
           p Cafe
-          p.transactions-list__item--expense -15.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+          p.transactions__item--expense -15.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
+      li.transactions__item
+        .transactions__item-wrapper
           p Car
-          p.transactions-list__item--expense -35.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+          p.transactions__item--expense -35.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
+      li.transactions__item
+        .transactions__item-wrapper
           p Supermarket
-          p.transactions-list__item--income -20.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--income -20.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
 
-    ul.transactions-list__list
-      .transactions-list__day
-        p Sunday, 24
-        //- p -15.00 &#128
-      li.transactions-list__item
-        .transactions-list__item-wrapper
+    ul.transactions__list
+      .transactions__header
+        .transactions__date-content
+          p 26
+          .transactions__date-wrapper
+            p Tuesday
+            p October 2021
+        p -70.00 &#128
+      li.transactions__item
+        .transactions__item-wrapper
           p Cafe
-          p.transactions-list__item--expense -15.00 &#128
-        .transactions-list__item-wrapper
-          p.transactions-list__item--account Tinkoff
-          p.transactions-list__item--edit.hidden edit
-          p.transactions-list__item--close.hidden close
+          p.transactions__item--expense -15.00 &#128
+        .transactions__item-wrapper
+          p.transactions__item--account Tinkoff
+          p.transactions__item--edit.hidden edit
+          p.transactions__item--close.hidden close
 
   template#edit
     .transaction-edit
